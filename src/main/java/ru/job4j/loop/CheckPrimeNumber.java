@@ -4,15 +4,18 @@ public class CheckPrimeNumber {
 
     public static boolean check(int number) {
 
-        if (number < 2) {
-            return false;
-        }
+        boolean result = true;
 
-        for (int index = 2; index <= number - 1; index++) {
-            if (number % index == 0) {
-                return false;
+        if (number < 2) {
+            result = false;
+        } else {
+            for (int index = 2; index <= number - 1; index++) {
+                if (number % index == 0) {
+                    result = false;
+                    break;
+                }
             }
         }
-        return true;
+        return result;
     }
 }
